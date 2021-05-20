@@ -1,6 +1,8 @@
-#Cleveron Homework
+# Cleveron Homework
 
 Answers and solutions to problems can be found in their respective folders.
+Problem 1a contains a solution to changing layout.
+Problem 1b contains a function to turn object into an array.
 Problem_1c contains a signup form react app using Material UI with input data validation.
 Problem 2 contains written answers to questions.
 
