@@ -1,7 +1,9 @@
 const validation = (values) => {
 
+    // set errors to an empty object
     let errors={};
 
+    // error conditions
     if(!values.fullname){
         errors.fullname="Name is required."
     }

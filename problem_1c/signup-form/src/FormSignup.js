@@ -34,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp({ submitForm }) {
     const classes = useStyles();
+
+    // assign initial value to empty string
     const [values, setValues] = useState({
         fullname: "",
         email: "",
@@ -42,20 +44,26 @@ export default function SignUp({ submitForm }) {
     });
 
     const [errors, setErrors] = useState({});
+
     const [dataIsCorrect, setDataIsCorrect] = useState(false);
 
+    // set values for each input field and assign it to respective field
     const handleChange = (event) =>{
         setValues({
             ...values,
             [event.target.name]: event.target.value,
         });
     };
+
     const handleFormSubmit = (event) =>{
+        // prevent page reload
         event.preventDefault();
+        // validate values and show errors if there is any
         setErrors(validation(values));
         setDataIsCorrect(true);
     };
 
+    // check for errors and dataiscorrect
     useEffect(() =>{
         if(Object.keys(errors).length === 0 && dataIsCorrect){
             submitForm(true)
