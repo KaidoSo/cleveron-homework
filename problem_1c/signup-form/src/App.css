@@ -12,3 +12,7 @@
     text-align: center;
 }
 
+.form-success {
+  padding-top: 50%;
+  color: red;
+}

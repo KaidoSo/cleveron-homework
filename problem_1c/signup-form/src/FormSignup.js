@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cleveron from './cleveron-logo.png';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SignUp() {
+export default function SignUp({ submitForm }) {
     const classes = useStyles();
     const [values, setValues] = useState({
         fullname: "",
@@ -42,6 +42,7 @@ export default function SignUp() {
     });
 
     const [errors, setErrors] = useState({});
+    const [dataIsCorrect, setDataIsCorrect] = useState(false);
 
     const handleChange = (event) =>{
         setValues({
@@ -52,7 +53,14 @@ export default function SignUp() {
     const handleFormSubmit = (event) =>{
         event.preventDefault();
         setErrors(validation(values));
+        setDataIsCorrect(true);
     };
+
+    useEffect(() =>{
+        if(Object.keys(errors).length === 0 && dataIsCorrect){
+            submitForm(true)
+        }
+    }, [dataIsCorrect, errors, submitForm]);
 
     return (
         <Container component="main" maxWidth="xs">
