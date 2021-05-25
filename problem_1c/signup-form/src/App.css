@@ -1,15 +1,15 @@
 .App {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .logo-link {
-    text-align: center;
+  text-align: center;
 }
 
 .cleveron-logo {
-    width: 60%;
-    text-align: center;
+  width: 60%;
+  text-align: center;
 }
 
 .form-success {
